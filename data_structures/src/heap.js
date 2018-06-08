@@ -1,6 +1,16 @@
 const heapsort = (arr) => {
   /* Your code here */
-  
+  const heap = new Heap();
+    // insert items into new heap
+    arr.forEach(item => heap.insert(item));
+
+    const arrCopy = [];
+
+    while (heap.getSize()) {
+        arrCopy.unshift(heap.delete());
+    }
+
+    return arrCopy
 };
 
 
