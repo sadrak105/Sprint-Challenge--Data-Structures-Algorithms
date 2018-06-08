@@ -22,7 +22,17 @@ class BinarySearchTree {
 
   breadthFirstForEach(cb) {
     /* Your code here */
+    // create queue
+    const queue = [];
+    queue.push(this);
 
+    // is not empty
+    while (queue.length !== 0) {
+        const node = queue.shift();
+        cb(node.value);
+        if(node.left) queue.push(node.left);
+        if(node.right) queue.push(node.right);
+    }
   }
 
   insert(value) {
