@@ -7,7 +7,17 @@ class BinarySearchTree {
 
   depthFirstForEach(cb) {
     /* Your code here */
-    
+    // traverse tree
+    const traverse = (node) => {
+      cb(node.value);
+      // move left
+      if(node.left !== null) traverse(node.left);
+      // move right
+      if(node.right !== null) traverse(node.right);
+  };
+  // start at root (PreOrder)
+  traverse(this);
+
   }
 
   breadthFirstForEach(cb) {
